@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: zuul
+
+server:
+  port: 3001
+  servlet:
+    session:
+      cookie:
+        name: GATEWAY
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:8091/eureka
+
+#zuul的路由可以省略，默认以服务ID作为访问路径
+#zuul可以作为过滤中心，或则作为一个认证中心来进行权限限制
+#zuul:
+#  routes:
+#    provider: /provider/**
+hystrix:
+  cammand:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+
+ribbon:
+  ConnetTimeout: 1000
+  ReadTimeout: 1000
+  MaxAutoRetiesNextServer: 2
+  MaxAutoRetries: 1
+
+#配置端点监控,暴露hystrix.stream端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream

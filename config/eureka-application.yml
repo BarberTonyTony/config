@@ -1,0 +1,15 @@
+server:
+  port: 8091
+
+
+eureka:
+  server:
+    enable-self-preservation: true #开启自我保护模式
+  instance:
+    hostname: eureka1 #eureka 通过hostname来进行区分服务
+  client:
+    fetch-registry: false #不想自己拉取数据
+    register-with-eureka: false #不想自己注册
+spring:
+  application:
+    name: eureka-server
