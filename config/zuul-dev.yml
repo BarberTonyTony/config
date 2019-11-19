@@ -9,10 +9,10 @@ server:
       cookie:
         name: GATEWAY
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka1:8091/eureka
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://eureka1:8091/eureka
 
 #zuul的路由可以省略，默认以服务ID作为访问路径
 #zuul可以作为过滤中心，或则作为一个认证中心来进行权限限制
